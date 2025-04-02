@@ -63,4 +63,5 @@ struct Triangle
 double heronArea(const Triangle &t);
 double vectorArea(const Triangle &t);
 
-void input(Triangle &t, std::vector<Point> &p);
+void inputTriangle(Triangle &t);
+void inputPoints(std::vector<Point> &p);

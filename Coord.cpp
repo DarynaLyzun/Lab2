@@ -38,7 +38,7 @@ bool Triangle::degenerate() const
     return area() == 0;
 }
 
-void input(Triangle &t, vector<Point> &p)
+void inputTriangle(Triangle &t)
 {
     cout << "Введіть координати вершин трикутника.\n" << "Перша вершина: ";
     while (!(cin >> t.A.x >> t.A.y) || getchar() != '\n')
@@ -63,10 +63,13 @@ void input(Triangle &t, vector<Point> &p)
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
         cout << "\nНекоректний ввід. Спробуйте знову: ";
     }
+}
 
+void inputPoints(vector<Point> &p)
+{
     int n = 0;
     cout << "\nСкільки точок ви хочете перевірити? ";
-    while (!(cin >> n) || getchar() != '\n')
+    while (!(cin >> n) || n < 1 || getchar() != '\n')
     {
         cin.clear();
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
